@@ -1,0 +1,54 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.15.1",
+    "axios": "^0.21.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.0.5",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "set REACT_APP_PROXY_URL=dev&& craco start",
+    "start:pro": "set REACT_APP_PROXY_URL=pro&& craco start",
+    "build:dev": "set REACT_APP_PROXY_URL=dev&& craco build",
+    "build:pro": "set REACT_APP_PROXY_URL=pro&& craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.1.1",
+    "babel-plugin-import": "^1.13.3",
+    "compression-webpack-plugin": "5.0.1",
+    "craco-less": "^1.17.1",
+    "redux-devtools": "^3.7.0",
+    "redux-devtools-extension": "^2.13.9",
+    "webpack-bundle-analyzer": "^4.4.0"
+  }
+}
