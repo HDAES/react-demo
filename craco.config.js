@@ -28,11 +28,7 @@ module.exports = {
     ],
     alias: {
       '@@': pathResolve('.'),
-      '@': pathResolve('src'),
-      '@http': pathResolve('src/http'),
-      '@redux': pathResolve('src/redux'),
-      '@pages': pathResolve('src/pages'),
-      '@com': pathResolve('src/components')
+      '@': pathResolve('src')
     }
   },
   babel: {

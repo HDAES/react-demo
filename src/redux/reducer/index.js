@@ -1,22 +1,24 @@
-import { TYPE } from "../action";
-//得到本地缓存
-let lifeData = JSON.parse(localStorage.getItem('lifeData')) || {};
-//需要缓存的值
+import { type } from "../action";
+
+// 获取localStorage值
+let lifeData = JSON.parse(localStorage.getItem('lifeData')) || {}
+
+// 需要缓存的值
 let saveStateKeys = [
-    TYPE.NAME
+    type.NAME
 ]
-//初始化值
+// 初始化值
 const initialState = {
-    redux_name: lifeData[TYPE.NAME] ? lifeData[TYPE.NAME] : 'am'
+    redux_name: lifeData[type.NAME] ? lifeData[type.NAME] : 'am'
 }
 
 const reducer = (state = initialState, action) => {
     saveLifeData(action)
     switch (action.type) {
-        case TYPE.NAME:
+        case type.NAME:
             return {
                 ...state,
-                redux_name: action.value
+                redux_name: action.payload
             }
         default:
             return {
@@ -25,10 +27,11 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-const saveLifeData = ({type,value}) => {
+// 缓存到本地方法
+const saveLifeData = ({ type, payload }) => {
     if (saveStateKeys.indexOf(type) !== -1) {
         let tmp = JSON.parse(localStorage.getItem('lifeData')) || {}
-        tmp[type] = value;
+        tmp[type] = payload;
         localStorage.setItem('lifeData', JSON.stringify(tmp))
     }
 }

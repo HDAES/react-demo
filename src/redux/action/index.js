@@ -1,12 +1,12 @@
-export const TYPE = {
+export const type = {
     NAME: 'NAME'
 }
 
 
 export function actionName(name){
     return {
-       type: TYPE.NAME,
-       value: name
+       type: type.NAME,
+       payload: name
     }
 }
  
