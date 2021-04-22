@@ -24,22 +24,22 @@ yarn build:pro		//打包线上开发环境
 
 ## 4.文件目录
 
-- build   										//打包后的文件
-- public 					 					//公共文件
-  - assets  								//静态文件
-    - image							//图片
-- src                                            //主要内容
-  -  http                                   //请求文件
-    - api                              //api路径
-    - axios                           //请求的封装
-    - index                           //请求的方法
-  - pages                                //全部页面
-  - redux                                 //数据管理
-  - router                                 //路由管理
-    - index          			     //路由文件
-    - touter.config                 //路由配置文件  
+- build   										      **打包后的文件
+- public 					 					        **公共文件
+  - assets  								        **静态文件
+    - image							            **图片
+- src                               **主要内容
+  -  http                           **请求文件
+    - api                           **api路径
+    - axios                         **请求的封装
+    - index                         **请求的方法
+  - pages                           **全部页面
+  - redux                           **数据管理
+  - router                          **路由管理
+    - index          			          **路由文件
+    - touter.config                 **路由配置文件  
 
-## 5. 组件
+## 5.  依赖
 
 | `React`: `^17.0.2`             | [Github](https://github.com/facebook/react)    [官网](https://react.docschina.org/) |
 | ------------------------------ | ------------------------------------------------------------ |

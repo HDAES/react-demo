@@ -5,20 +5,25 @@ let lifeData = JSON.parse(localStorage.getItem('lifeData')) || {}
 
 // 需要缓存的值
 let saveStateKeys = [
-    type.NAME
+    type.COLLAPSED
 ]
 // 初始化值
 const initialState = {
-    redux_name: lifeData[type.NAME] ? lifeData[type.NAME] : 'am'
+    collapsed: lifeData[type.COLLAPSED] ? lifeData[type.COLLAPSED] : false
 }
 
 const reducer = (state = initialState, action) => {
     saveLifeData(action)
     switch (action.type) {
-        case type.NAME:
+        case type.NAME :
             return {
                 ...state,
                 redux_name: action.payload
+            }
+        case type.COLLAPSED :
+            return {
+                ...state,
+                collapsed: action.payload
             }
         default:
             return {

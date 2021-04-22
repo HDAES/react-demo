@@ -8,15 +8,17 @@
 import React from 'react'
 import Login from '@/pages/login'
 import { HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
-
+import MyLayout from '@/layout/index'
 const myRouter = () =>{
 
     return (
         <Router>
+            <MyLayout>
             <Switch>
                 <Route path="/login" component={Login} />
                 <Redirect to="/login"/>
             </Switch>
+            </MyLayout>
         </Router>
     )
 } 
