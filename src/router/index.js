@@ -6,21 +6,34 @@
  */
 
 import React from 'react'
-import Login from '@/pages/login'
 import { HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
-import MyLayout from '@/layout/index'
+import RouterConfig from './router.config'
 const myRouter = () =>{
-
     return (
         <Router>
-            <MyLayout>
             <Switch>
-                <Route path="/login" component={Login} />
-                <Redirect to="/login"/>
+                { RouteWithSubRoutes(RouterConfig) }
             </Switch>
-            </MyLayout>
         </Router>
     )
 } 
 
 export default myRouter;
+
+// 路由递归方法
+function RouteWithSubRoutes(RoutesList){
+    return RoutesList.map( (item, index) =>{
+        if(item.routes){
+            return <Route path={item.path} key={index} render={ () =>{
+                if(item.component!=null){
+                    return <item.component>
+                        { RouteWithSubRoutes(item.routes)}
+                    </item.component>
+                }
+            }}/>
+        }else{
+            return item.auth?<Route  {...item} key={index}/>
+            : <Route path={item.path}  render={ () => <Redirect to="/login"/>} key={index}/>
+        }
+    })
+}

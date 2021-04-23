@@ -3,10 +3,9 @@ import { Layout, Badge, Space, Avatar  } from 'antd';
 import { connect } from 'react-redux'
 import { changeCollapsed } from '@/redux/action/index'
 import {MenuUnfoldOutlined, MenuFoldOutlined, BellOutlined, TagOutlined, FullscreenOutlined, FullscreenExitOutlined, UserOutlined } from '@ant-design/icons';
+
 function MyHeader({collapsed,dispatch}){
-
     const [fullScreen, setFullScreen] = useState(false)
-
     // 全屏方法
     const handleFullScreen = () =>{
         let dos = document.documentElement;

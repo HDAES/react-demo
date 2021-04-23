@@ -8,7 +8,7 @@ import { changeCollapsed } from '@/redux/action/index'
 import './layout.less'
 const { Sider, Content } = Layout;
 
-function MyLayout({collapsed, dispatch}) {
+function MyLayout({collapsed, dispatch, children}) {
     return (
         <Layout style={{ minHeight: '100vh' }} className="my-layout">
             <Sider collapsible collapsed={collapsed} onCollapse={()=>dispatch(changeCollapsed(!collapsed))}>
@@ -18,7 +18,7 @@ function MyLayout({collapsed, dispatch}) {
                 <MyHeader/>
                 <Scrollbars autoHide>
                     <Content style={{padding:20}}>
-                        13212
+                        {children}
                     </Content>
                 </Scrollbars>
             </Layout>
